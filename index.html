@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nokoss - L'authenticité locale, simplifiée</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --primary-green: #1a5d1a;
+            --secondary-green: #2e7d32;
+            --accent-orange: #e65100;
+            --light-orange: #ff9800;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --white: #ffffff;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header et Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            z-index: 1000;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 55px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-size: 1.6rem;
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: scale(1.02);
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 32px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+            margin-top: 91px;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 850px;
+            padding: 30px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero p {
+            font-size: 1.6rem;
+            margin-bottom: 45px;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 17px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(30, 30);
+                opacity: 0;
+            }
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(26, 93, 26, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(26, 93, 26, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--accent-orange), var(--light-orange));
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(230, 81, 0, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(230, 81, 0, 0.4);
+        }
+        
+        /* Sections générales */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
+            border-radius: 3px;
+        }
+        
+        .section-title p {
+            color: var(--dark-gray);
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        
+        /* Section Valeurs */
+        .values {
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .values::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231a5d1a' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .value-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 45px 35px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
+        }
+        
+        .value-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .value-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.1), rgba(46, 125, 50, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2.3rem;
+            color: var(--primary-green);
+            transition: var(--transition);
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.15), rgba(46, 125, 50, 0.15));
+        }
+        
+        .value-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            color: var(--primary-green);
+        }
+        
+        .value-card p {
+            color: var(--dark-gray);
+            font-size: 1.05rem;
+        }
+        
+        /* Section Produit */
+        .product-preview {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+            flex-wrap: wrap;
+        }
+        
+        .product-image {
+            flex: 1;
+            min-width: 320px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(26, 93, 26, 0.1), rgba(230, 81, 0, 0.1));
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .product-image:hover::before {
+            opacity: 1;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .product-image:hover img {
+            transform: scale(1.08);
+        }
+        
+        .product-info {
+            flex: 1;
+            min-width: 320px;
+        }
+        
+        .product-info h3 {
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            color: var(--primary-green);
+            line-height: 1.2;
+        }
+        
+        .product-info p {
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+        
+        .ingredient-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.05), rgba(46, 125, 50, 0.05));
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-green);
+            transition: var(--transition);
+        }
+        
+        .ingredient-item:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.1), rgba(46, 125, 50, 0.1));
+        }
+        
+        .ingredient-item i {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+        }
+        
+        .product-features {
+            margin-bottom: 35px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 10px 0;
+        }
+        
+        .feature-item i {
+            color: var(--primary-green);
+            font-size: 1.3rem;
+        }
+        
+        /* Section Recettes */
+        .recipes {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+        
+        .recipes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a5d1a' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .recipe-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .recipe-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .recipe-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
+            z-index: 1;
+        }
+        
+        .recipe-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .recipe-card:hover .recipe-img img {
+            transform: scale(1.15);
+        }
+        
+        .recipe-content {
+            padding: 30px;
+        }
+        
+        .recipe-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+        
+        .recipe-content p {
+            color: var(--dark-gray);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        /* Section À propos */
+        .about {
+            background-color: var(--white);
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+            flex-wrap: wrap;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 320px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content {
+            flex: 1;
+            min-width: 320px;
+        }
+        
+        .about-content h3 {
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            color: var(--primary-green);
+            line-height: 1.2;
+        }
+        
+        .about-content p {
+            margin-bottom: 25px;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Section Contact */
+        .contact-container {
+            display: flex;
+            gap: 70px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 320px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 320px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 35px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.03), rgba(46, 125, 50, 0.03));
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-green);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.08), rgba(46, 125, 50, 0.08));
+        }
+        
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.1), rgba(46, 125, 50, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--primary-green);
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.2), rgba(46, 125, 50, 0.2));
+        }
+        
+        .contact-details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--primary-green);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--dark-gray);
+            font-size: 1.05rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 17px 20px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            background-color: var(--light-gray);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(26, 93, 26, 0.15);
+            background-color: var(--white);
+        }
+        
+        textarea.form-control {
+            min-height: 160px;
+            resize: vertical;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-green), #134913);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .newsletter h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter p {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 550px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            min-width: 280px;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: var(--transition);
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+            background-color: var(--white);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: var(--white);
+            padding: 70px 0 30px;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 12px;
+            color: var(--white);
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 45px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--light-orange));
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.05rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-orange);
+            padding-left: 8px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        
+        /* Boutons flottants */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+        
+        .back-to-top {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            display: none;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 50px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: fadeInUp 0.5s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-gray);
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: var(--primary-green);
+            transform: scale(1.2);
+        }
+        
+        .modal-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.1), rgba(46, 125, 50, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 3rem;
+            color: var(--primary-green);
+        }
+        
+        .modal h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 91px;
+                left: -100%;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                margin-top: 91px;
+                min-height: 600px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 35px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                min-width: 100%;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .logo span {
+                font-size: 1.4rem;
+            }
+            
+            .floating-buttons {
+                bottom: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="#accueil" class="logo">
+                    <!-- Logo Nokoss - Remplacez logo.jpeg par votre fichier logo -->
+                    <img src="logo.jpeg" alt="Logo Nokoss" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" viewBox=\"0 0 50 50\"><rect width=\"50\" height=\"50\" fill=\"%231a5d1a\"/>
+                    <span>Greencode</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#produit">Le Nokoss</a></li>
+                    <li><a href="#valeurs">Nos Atouts</a></li>
+                    <li><a href="#recettes">Recettes</a></li>
+                    <li><a href="#apropos">À Propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <video autoplay muted loop class="hero-video" id="heroVideo">
+            <source src="nokoss.mp4" type="video/mp4">
+            <!-- Fallback si la vidéo ne charge pas -->
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Nokoss épices">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>L'authenticité locale, simplifiée</h1>
+            <p>Un mélange d'épices 100% naturel pour cuisiner traditionnel en un temps record</p>
+            <div class="cta-buttons">
+                <a href="#produit" class="btn btn-primary">Découvrir</a>
+                <a href="#contact" class="btn btn-secondary">Acheter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Valeurs -->
+    <section class="values" id="valeurs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Valeurs</h2>
+                <p>Découvrez pourquoi Nokoss est le choix idéal pour votre cuisine</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Gain de temps</h3>
+                    <p>Préparez des plats traditionnels en un temps record sans compromettre le goût authentique. Plus besoin de préparer chaque épice séparément.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>100% naturel & local</h3>
+                    <p>Des ingrédients naturels sourcés localement pour soutenir les producteurs de la région. Sans conservateurs, colorants ou exhausteurs de goût.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Goût authentique</h3>
+                    <p>Le vrai goût de la cuisine traditionnelle dans chaque plat que vous préparez. Une recette secrète qui réveille les papilles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produit -->
+    <section class="product" id="produit">
+        <div class="container">
+            <div class="section-title">
+                <h2>Le Nokoss</h2>
+                <p>Notre mélange d'épices signature pour révolutionner votre cuisine</p>
+            </div>
+            
+            <div class="product-preview">
+                <div class="product-image fade-in">
+                    <img src="prod_pres_apropos.webp" alt="Mélange d'épices Nokoss">
+                </div>
+                
+                <div class="product-info fade-in">
+                    <h3>Notre mélange d'épices signature</h3>
+                    <p>Nokoss combine les meilleures épices locales pour vous offrir une expérience culinaire unique. Plus besoin de multiples ingrédients, notre mélange fait tout le travail pour vous.</p>
+                    
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sans conservateurs</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sans colorants artificiels</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sans exhausteurs de goût</span>
+                        </div>
+                    </div>
+                    
+                    <h4>Ingrédients 100% naturels :</h4>
+                    <div class="ingredients-list">
+                        <div class="ingredient-item">
+                            <i class="fas fa-pepper-hot"></i>
+                            <span>Poivrons</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Piments verts</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-garlic"></i>
+                            <span>Ail</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-onion"></i>
+                            <span>Oignons</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Coriandre</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-seedling"></i>
+                            <span>Oignons verts</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-mortar-pestle"></i>
+                            <span>Sel</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-circle"></i>
+                            <span>Poivre noir</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-fire-flame-curved"></i>
+                            <span>Poivre de Cayenne</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-smoking"></i>
+                            <span>Paprika fumé</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Recettes -->
+    <section class="recipes" id="recettes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recettes avec Nokoss</h2>
+                <p>Découvrez comment utiliser Nokoss dans vos plats traditionnels préférés</p>
+            </div>
+            
+            <div class="recipes-grid">
+                <div class="recipe-card fade-in">
+                    <div class="recipe-img">
+                        <img src="thieboudienne.jpeg" alt="Thiéboudienne">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Thiéboudienne</h3>
+                        <p>Le plat national sénégalais simplifié avec Nokoss. Plus besoin de préparer séparément tous les ingrédients d'assaisonnement.</p>
+                        <a href="#contact" class="btn btn-secondary">Voir la recette</a>
+                    </div>
+                </div>
+                
+                <div class="recipe-card fade-in">
+                    <div class="recipe-img">
+                        <img src="poulet.jpg" alt="Yassa">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Yassa Poulet</h3>
+                        <p>Un délicieux plat de poulet mariné avec oignons et citron. Nokoss apporte la touche d'authenticité qui fait toute la différence.</p>
+                        <a href="#contact" class="btn btn-secondary">Voir la recette</a>
+                    </div>
+                </div>
+                
+                <div class="recipe-card fade-in">
+                    <div class="recipe-img">
+                        <img src="mafe-cuisine-malienne.webp" alt="Mafé">
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Mafé</h3>
+                        <p>La sauce à base d'arachide rendue encore plus savoureuse avec le mélange d'épices Nokoss. Un délice pour toute la famille.</p>
+                        <a href="#contact" class="btn btn-secondary">Voir la recette</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section class="about" id="apropos">
+        <div class="container">
+            <div class="section-title">
+                <h2>À Propos de Nokoss</h2>
+                <p>Découvrez l'histoire et la mission derrière notre mélange d'épices unique</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content fade-in">
+                    <h3>Notre histoire</h3>
+                    <p>Nokoss est né d'une passion pour la cuisine traditionnelle africaine et d'un constat simple : préparer des plats authentiques prend trop de temps aujourd'hui.</p>
+                    <p>Notre fondatrice, Greencode, a grandi en regardant nos grandes-mères préparer des plats savoureux avec des épices fraîchement moulues. Elle a voulu préserver cette tradition tout en l'adaptant aux besoins modernes.</p>
+                    <p>Après des mois de recherche et de tests, le mélange Nokoss était né : toutes les saveurs authentiques, en un seul produit.</p>
+                    <h4>Notre mission</h4>
+                    <p>Rendre la cuisine traditionnelle accessible à tous, sans compromis sur la qualité ou le goût. Soutenir les producteurs locaux et promouvoir une alimentation saine et naturelle.</p>
+                </div>
+                
+                <div class="about-image fade-in">
+                    <img src="histoire-Nokoss.jpg" alt="Épices fraîches">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Où acheter Nokoss ?</h2>
+                <p>Pour acheter notre produit ou pour toute information, contactez-nous directement</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Contactez-nous pour acheter Nokoss</h3>
+                    <p>Nokoss est disponible en sachets de 100g et 250g. Contactez-nous pour connaître les points de vente près de chez vous ou pour commander directement.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Notre adresse</h4>
+                            <p>123 Rue des Épices, Dakar, Sénégal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <p>+221 33 123 45 67</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>contact@Greencode.sn</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/221331234567" target="_blank" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <h3>Demande d'information ou commande</h3>
+                    <p>Remplissez ce formulaire et nous vous répondrons dans les plus brefs délais.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Sélectionnez une option</option>
+                                <option value="commande">Commande de Nokoss</option>
+                                <option value="info">Demande d'information</option>
+                                <option value="recette">Demande de recette</option>
+                                <option value="partenariat">Partenariat / Distribution</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" required placeholder="Détaillez votre demande..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Restez informés des nouveautés</h2>
+            <p>Abonnez-vous à notre newsletter pour recevoir des recettes exclusives, des offres spéciales et des actualités sur nos produits.</p>
+            
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" placeholder="Votre email" required>
+                <button type="submit" class="btn btn-secondary">S'abonner</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <!-- Logo Nokoss dans le footer -->
+                        <img src="logo.jpeg" alt="Logo Nokoss" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewBox=\"0 0 40 40\"><rect width=\"40\" height=\"40\" fill=\"%23ffffff\"/>
+                        <span>Greencode</span>
+                    </div>
+                    <p>L'authenticité locale, simplifiée. Un mélange d'épices 100% naturel pour cuisiner traditionnel en un temps record.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#produit">Le Nokoss</a></li>
+                        <li><a href="#valeurs">Nos Atouts</a></li>
+                        <li><a href="#recettes">Recettes</a></li>
+                        <li><a href="#apropos">À Propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@nokoss.sn">contact@nokoss.sn</a></li>
+                        <li><a href="tel:+221331234567">+221 33 123 45 67</a></li>
+                        <li>123 Rue des Épices</li>
+                        <li>Dakar, Sénégal</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/221774612082" target="_blank" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy;  Groupe-Greencode. Tous droits réservés. | Conçu avec passion pour la cuisine africaine</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Boutons flottants -->
+    <div class="floating-buttons">
+        <button class="floating-btn whatsapp-btn" id="whatsappBtn">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <button class="floating-btn back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Modal de confirmation -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3>Message envoyé avec succès !</h3>
+            <p>Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.</p>
+            <button class="btn btn-primary" id="modalOk">OK</button>
+        </div>
+    </div>
+
+<script>
+    // Initialiser EmailJS avec votre clé publique
+    emailjs.init("Q_FukEBNBmzGiNXkM");
+    
+    // Gestion du menu mobile
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Fermer le menu mobile quand on clique sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+    
+    // Animation au défilement
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+    
+    // Gestion du formulaire de contact
+    const contactForm = document.getElementById('contactForm');
+    const confirmationModal = document.getElementById('confirmationModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalOk = document.getElementById('modalOk');
+    
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Récupérer le bouton de soumission
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        
+        // Désactiver le bouton et changer le texte
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+        
+        // Récupérer les données du formulaire
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value || 'Non renseigné';
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Générer une référence unique
+        const reference = 'NOK-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+        
+        // Date actuelle formatée
+        const now = new Date();
+        const dateReception = now.toLocaleDateString('fr-FR', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        
+        // Fonction pour obtenir le label du sujet
+        function getSubjectLabel(subject) {
+            const labels = {
+                'commande': 'Commande de Nokoss',
+                'info': 'Demande d\'information',
+                'recette': 'Demande de recette',
+                'partenariat': 'Partenariat / Distribution',
+                'autre': 'Autre demande'
+            };
+            return labels[subject] || 'Demande d\'information';
+        }
+        
+        // Fonction pour obtenir la couleur selon le sujet
+        function getSubjectColor(subject) {
+            const colors = {
+                'commande': '#10b981', // Vert
+                'info': '#3b82f6', // Bleu
+                'recette': '#8b5cf6', // Violet
+                'partenariat': '#f59e0b', // Orange
+                'autre': '#6b7280' // Gris
+            };
+            return colors[subject] || '#6b7280';
+        }
+        
+        // Préparer les paramètres pour l'email de notification à Greencode
+        const templateParams = {
+            client_nom: name,
+            client_email: email,
+            client_telephone: phone,
+            type_demande: getSubjectLabel(subject),
+            message_client: message,
+            date_reception: dateReception,
+            reference: reference,
+            heure_reception: now.toLocaleTimeString('fr-FR'),
+            ip_client: 'Collectée par le serveur',
+            couleur_sujet: getSubjectColor(subject),
+            
+            // Statistiques (vous pouvez les adapter)
+            nb_demandes_jour: 'Nouvelle',
+            nb_demandes_type: '1',
+            taux_reponse: '100%',
+            temps_moyen: '2h',
+            
+            // Liens (à adapter selon votre configuration)
+            lien_admin: 'https://vercel.com/dashboard',
+            lien_commandes: window.location.origin + '/admin/commandes',
+            lien_clients: window.location.origin + '/admin/clients',
+            lien_stats: window.location.origin + '/admin/statistiques'
+        };
+        
+        console.log('Envoi de l\'email à Greencode...', templateParams);
+        
+        // Envoyer l'email à Greencode - UTILISEZ VOTRE SERVICE_ID ET TEMPLATE_ID
+        emailjs.send('service_zhgc4xx', 'template_4qv7anu', templateParams)
+            .then(response => {
+                console.log('✅ Notification envoyée à Greencode!', response.status, response.text);
+                
+                // Afficher le modal de confirmation
+                confirmationModal.style.display = 'flex';
+                
+                // Réinitialiser le formulaire
+                contactForm.reset();
+                
+                // Réactiver le bouton et remettre le texte original
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                
+                // Ajouter une animation de succès
+                submitBtn.style.backgroundColor = '#10b981';
+                setTimeout(() => {
+                    submitBtn.style.backgroundColor = '';
+                }, 2000);
+                
+                // Faire défiler jusqu'au modal
+                confirmationModal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+            }, error => {
+                console.log('❌ Erreur lors de l\'envoi:', error);
+                
+                // Réactiver le bouton
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Réessayer l\'envoi';
+                
+                // Afficher un message d'erreur plus convivial
+                showNotification(`
+                    <div style="background-color: #fee; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <strong>⚠️ Erreur d'envoi</strong><br>
+                        <p>Le message n'a pas pu être envoyé. Vous pouvez :</p>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Réessayer dans quelques instants</li>
+                            <li>Nous contacter directement sur WhatsApp</li>
+                            <li>Nous envoyer un email à contact@greencode.sn</li>
+                        </ul>
+                    </div>
+                `, 'error');
+            });
+    });
+    
+    // Fonction pour afficher des notifications
+    function showNotification(message, type = 'info') {
+        // Supprimer toute notification existante
+        const existingNotification = document.querySelector('.notification-message');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+        
+        // Créer la notification
+        const notification = document.createElement('div');
+        notification.className = 'notification-message';
+        notification.innerHTML = message;
+        
+        // Style de la notification
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            max-width: 400px;
+        `;
+        
+        if (type === 'error') {
+            notification.style.backgroundColor = '#ef4444';
+        } else if (type === 'success') {
+            notification.style.backgroundColor = '#10b981';
+        } else {
+            notification.style.backgroundColor = '#3b82f6';
+        }
+        
+        document.body.appendChild(notification);
+        
+        // Ajouter l'animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Supprimer après 5 secondes
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }, 5000);
+    }
+    
+    // Gestion de la newsletter
+    const newsletterForm = document.getElementById('newsletterForm');
+    
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value;
+        
+        // Valider l'email
+        if (!validateEmail(email)) {
+            showNotification('Veuillez entrer une adresse email valide.', 'error');
+            return;
+        }
+        
+        const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        
+        // Désactiver le bouton
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Inscription...';
+        
+        // Préparer les paramètres pour la newsletter
+        const newsletterParams = {
+            prenom_abonne: email.split('@')[0],
+            email_abonne: email,
+            date_inscription: new Date().toLocaleDateString('fr-FR'),
+            date_expiration: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('fr-FR'),
+            lien_achat: window.location.origin + '#contact',
+            nom_recette: 'Thiéboudienne simplifiée',
+            description_recette: 'Le plat national sénégalais préparé en un temps record avec Nokoss',
+            lien_recette: window.location.origin + '#recettes',
+            lien_desabonnement: window.location.origin + '/unsubscribe?email=' + encodeURIComponent(email)
+        };
+        
+        // Envoyer l'inscription à la newsletter
+        emailjs.send('service_yopmail', 'template_newsletter_nokoss', newsletterParams)
+            .then(response => {
+                console.log('✅ Newsletter subscription successful!', response.status, response.text);
+                
+                showNotification('🎉 Merci pour votre inscription à notre newsletter !', 'success');
+                newsletterForm.reset();
+                
+                // Réactiver le bouton
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                
+            }, error => {
+                console.log('❌ Newsletter error:', error);
+                
+                // Même en cas d'erreur, on affiche un succès à l'utilisateur
+                showNotification('Votre inscription a été enregistrée !', 'success');
+                newsletterForm.reset();
+                
+                // Réactiver le bouton
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            });
+    });
+    
+    // Validation d'email
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    // Fermer le modal
+    modalClose.addEventListener('click', () => {
+        confirmationModal.style.display = 'none';
+    });
+    
+    modalOk.addEventListener('click', () => {
+        confirmationModal.style.display = 'none';
+    });
+    
+    // Fermer le modal en cliquant en dehors
+    window.addEventListener('click', (e) => {
+        if (e.target === confirmationModal) {
+            confirmationModal.style.display = 'none';
+        }
+    });
+    
+    // Header qui devient opaque au défilement
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+        } else {
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)';
+        }
+    });
+    
+    // Redirection vers la section contact pour les boutons "Acheter"
+    document.querySelectorAll('a[href="#contact"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (link.getAttribute('href') === '#contact') {
+                e.preventDefault();
+                document.getElementById('contact').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Effet de ripple pour les boutons
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            let x = e.clientX - e.target.getBoundingClientRect().left;
+            let y = e.clientY - e.target.getBoundingClientRect().top;
+            
+            let ripple = document.createElement('span');
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+    
+    // Bouton WhatsApp flottant
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    whatsappBtn.addEventListener('click', () => {
+        // Ouvrir WhatsApp avec un message prédéfini
+        window.open('https://wa.me/221774612082?text=Bonjour%20Nokoss%20!%20Je%20suis%20intéressé(e)%20par%20votre%20produit.%20Pouvez-vous%20me%20renseigner%20?', '_blank');
+    });
+    
+    // Bouton de retour en haut
+    const backToTop = document.getElementById('backToTop');
+    
+    // Afficher/masquer le bouton de retour en haut
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.style.display = 'flex';
+        } else {
+            backToTop.style.display = 'none';
+        }
+    });
+    
+    // Gestion du clic sur le bouton de retour en haut
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Animation pour les boutons flottants au chargement
+    setTimeout(() => {
+        whatsappBtn.style.transform = 'translateY(0)';
+        whatsappBtn.style.opacity = '1';
+    }, 1000);
+    
+    // Effet de vibration sur le bouton WhatsApp toutes les 30 secondes
+    setInterval(() => {
+        if (document.visibilityState === 'visible') {
+            whatsappBtn.style.animation = 'vibrate 0.5s';
+            setTimeout(() => {
+                whatsappBtn.style.animation = '';
+            }, 500);
+        }
+    }, 30000);
+    
+    // Ajout de l'animation de vibration
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes vibrate {
+            0% { transform: translateY(0) rotate(0); }
+            25% { transform: translateY(-3px) rotate(2deg); }
+            50% { transform: translateY(0) rotate(0); }
+            75% { transform: translateY(-3px) rotate(-2deg); }
+            100% { transform: translateY(0) rotate(0); }
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        /* Animation pour le modal */
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .modal-content {
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        /* Animation pour le spinner */
+        .fa-spin {
+            animation: fa-spin 2s infinite linear;
+        }
+        
+        @keyframes fa-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Initialisation des boutons flottants
+    whatsappBtn.style.transform = 'translateY(100px)';
+    whatsappBtn.style.opacity = '0';
+    whatsappBtn.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    
+    // Effet de notification pour les nouveaux visiteurs
+    window.addEventListener('load', () => {
+        const firstTime = sessionStorage.getItem('nokoss_first_visit');
+        if (!firstTime) {
+            setTimeout(() => {
+                showNotification('Bienvenue sur Greencode ! Découvrez l\'authenticité locale simplifiée.', 'info');
+                sessionStorage.setItem('nokoss_first_visit', 'true');
+            }, 2000);
+        }
+    });
+    
+    // Gestion des erreurs de chargement d'images
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            const fallbackColors = ['#1a5d1a', '#2e7d32', '#e65100'];
+            const randomColor = fallbackColors[Math.floor(Math.random() * fallbackColors.length)];
+            
+            this.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                <rect width="100" height="100" fill="${randomColor}" opacity="0.1"/>
+                <text x="50" y="60" font-family="Arial" font-size="14" fill="${randomColor}" text-anchor="middle" font-weight="bold">GREENCODE</text>
+            </svg>`;
+        });
+    });
+</script>
+</body>
+</html>
