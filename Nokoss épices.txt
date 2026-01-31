@@ -415,10 +415,6 @@
         }
         
         /* Section Produit */
-        .product {
-            background-color: var(--white);
-        }
-        
         .product-preview {
             display: flex;
             align-items: center;
@@ -525,300 +521,6 @@
         .feature-item i {
             color: var(--primary-green);
             font-size: 1.3rem;
-        }
-        
-        /* Tableau des prix */
-        .pricing-table {
-            overflow-x: auto;
-            margin: 40px 0;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        th, td {
-            padding: 20px;
-            text-align: left;
-            border-bottom: 1px solid var(--medium-gray);
-        }
-        
-        th {
-            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
-            color: white;
-            font-weight: 600;
-        }
-        
-        tr:hover {
-            background-color: rgba(26, 93, 26, 0.03);
-        }
-        
-        .price-cell {
-            font-weight: 700;
-            color: var(--accent-orange);
-            font-size: 1.2rem;
-        }
-        
-        .promo-badge {
-            background-color: var(--light-orange);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-        }
-        
-        /* Nouvelle section : Types de Nokoss */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-        
-        .product-card {
-            background-color: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .product-img {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .product-card:hover .product-img img {
-            transform: scale(1.1);
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, var(--accent-orange), var(--light-orange));
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .product-content {
-            padding: 25px;
-        }
-        
-        .product-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--primary-green);
-        }
-        
-        .product-price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-            margin: 15px 0;
-        }
-        
-        .product-price span {
-            font-size: 1rem;
-            color: var(--dark-gray);
-            font-weight: 400;
-        }
-        
-        .product-specs {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-            padding: 15px 0;
-            border-top: 1px solid var(--medium-gray);
-            border-bottom: 1px solid var(--medium-gray);
-        }
-        
-        .spec-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .spec-item i {
-            font-size: 1.5rem;
-            color: var(--primary-green);
-            margin-bottom: 8px;
-        }
-        
-        .spec-item span {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-        }
-        
-        /* Section ingrédients détaillée */
-        .ingredients-detailed {
-            margin-top: 80px;
-            background-color: var(--light-gray);
-            padding: 60px;
-            border-radius: 20px;
-        }
-        
-        .ingredients-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .ingredients-title h3 {
-            font-size: 2.2rem;
-            color: var(--primary-green);
-            margin-bottom: 15px;
-        }
-        
-        .ingredients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 25px;
-        }
-        
-        .ingredient-detailed {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-        
-        .ingredient-detailed:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .ingredient-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 3px solid var(--primary-green);
-            padding: 10px;
-        }
-        
-        .ingredient-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-        
-        .ingredient-detailed h4 {
-            font-size: 1.2rem;
-            color: var(--primary-green);
-            margin-bottom: 10px;
-        }
-        
-        .ingredient-detailed p {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            line-height: 1.6;
-        }
-        
-        /* Style pour les images d'ingrédients */
-        .ingredient-img-list {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .ingredient-img-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 100px;
-        }
-        
-        .ingredient-img-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .ingredient-img-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .ingredient-name {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 8px;
-            font-size: 0.8rem;
-            text-align: center;
-        }
-        
-        /* Section conservation */
-        .conservation-info {
-            background: linear-gradient(135deg, rgba(26, 93, 26, 0.05), rgba(230, 81, 0, 0.05));
-            padding: 40px;
-            border-radius: 15px;
-            margin-top: 50px;
-            border-left: 5px solid var(--accent-orange);
-        }
-        
-        .conservation-info h3 {
-            color: var(--accent-orange);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .conservation-info h3 i {
-            font-size: 1.8rem;
-        }
-        
-        .conservation-tips {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        
-        .tip-item {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .tip-item i {
-            color: var(--primary-green);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
         }
         
         /* Section Recettes */
@@ -1362,10 +1064,6 @@
             .section-title h2 {
                 font-size: 2.4rem;
             }
-            
-            .ingredient-img-list {
-                grid-template-columns: repeat(3, 1fr);
-            }
         }
         
         @media (max-width: 768px) {
@@ -1431,23 +1129,6 @@
                 height: 55px;
                 font-size: 1.3rem;
             }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .ingredients-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .ingredients-detailed {
-                padding: 30px;
-            }
-            
-            .product-specs {
-                flex-direction: column;
-                gap: 15px;
-            }
         }
         
         @media (max-width: 576px) {
@@ -1497,18 +1178,6 @@
                 height: 50px;
                 font-size: 1.2rem;
             }
-            
-            .ingredient-img-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .ingredients-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .conservation-tips {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -1520,7 +1189,7 @@
                 <a href="#accueil" class="logo">
                     <!-- Logo Nokoss - Remplacez logo.jpeg par votre fichier logo -->
                     <img src="logo.jpeg" alt="Logo Nokoss" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" viewBox=\"0 0 50 50\"><rect width=\"50\" height=\"50\" fill=\"%231a5d1a\"/>
-                    <span>Nokoss</span>
+                    <span>Greencode</span>
                 </a>
             </div>
             
@@ -1543,24 +1212,20 @@
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
-   <!-- Remplacer la section vidéo dans le hero -->
-<video 
+       <video 
   autoplay 
   muted 
   loop 
   playsinline
-  preload="metadata"  
+  preload="auto"
   class="hero-video" 
-  id="heroVideo"
-  poster="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-  
+  id="heroVideo">
+
   <source src="nokoss.mp4" type="video/mp4">
-  
+
   <!-- Fallback si la vidéo ne charge pas -->
-  <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nokoss épices">
+  <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Nokoss épices">
 </video>
-
-
 
         <div class="hero-overlay"></div>
         <div class="container hero-content">
@@ -1609,7 +1274,7 @@
         </div>
     </section>
 
-    <!-- Section Produit MODIFIÉE -->
+    <!-- Section Produit -->
     <section class="product" id="produit">
         <div class="container">
             <div class="section-title">
@@ -1617,262 +1282,76 @@
                 <p>Notre mélange d'épices signature pour révolutionner votre cuisine</p>
             </div>
             
-            <!-- Tableau des prix -->
-            <div class="pricing-table fade-in">
-                <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary-green);">Nos tarifs</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Conditionnement</th>
-                            <th>Prix</th>
-                            <th>Économie</th>
-                            <th>Recommandé pour</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>100g</strong></td>
-                            <td class="price-cell">1500 FCFA</td>
-                            <td>Essai</td>
-                            <td>1-2 repas</td>
-                        </tr>
-                        <tr>
-                            <td><strong>250g</strong></td>
-                            <td class="price-cell">2500 FCFA</td>
-                            <td>10%</td>
-                            <td>Petite famille</td>
-                        </tr>
-                        <tr>
-                            <td><strong>500g</strong></td>
-                            <td class="price-cell">3500 FCFA</td>
-                            <td>20% <span class="promo-badge">Populaire</span></td>
-                            <td>Famille moyenne</td>
-                        </tr>
-                        <tr>
-                            <td><strong>1kg</strong></td>
-                            <td class="price-cell">5000 FCFA <span class="promo-badge">Meilleure offre</span></td>
-                            <td>33%</td>
-                            <td>Grande famille/Restaurant</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <!-- Différents types de Nokoss -->
-            <div class="section-title" style="margin-top: 80px;">
-                <h2>Nos Variétés</h2>
-                <p>Choisissez le Nokoss qui correspond à vos préférences</p>
-            </div>
-            
-            <div class="products-grid">
-                <div class="product-card fade-in">
-                    <div class="product-img">
-                        <img src="Nokos vert.jpg" alt="Nokoss vert" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1071&q=80'">
-                        <div class="product-badge">Nokoss vert</div>
-                    </div>
-                    <div class="product-content">
-                        <h3>Nokoss Doux</h3>
-                        <p>Pour ceux qui préfèrent une saveur subtile et aromatique sans trop de piquant</p>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-pepper-hot"></i>
-                                <span>Piquant faible</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-leaf"></i>
-                                <span>Nokoss vert</span>
-                            </div>
-                        </div>
-                        <div class="product-price">1500 FCFA <span>/ 100g</span></div>
-                        <a href="#contact" class="btn btn-primary">Commander</a>
-                    </div>
+            <div class="product-preview">
+                <div class="product-image fade-in">
+                    <img src="prod_pres_apropos.webp" alt="Mélange d'épices Nokoss">
                 </div>
                 
-                <div class="product-card fade-in">
-                    <div class="product-img">
-                        <img src="épices.jpg" alt="Nokoss épices" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1092&q=80'">
-                        <div class="product-badge">Nokoss épices</div>
-                    </div>
-                    <div class="product-content">
-                        <h3>Nokoss épices</h3>
-                        <p>L'équilibre parfait entre saveurs et piquant pour la majorité des plats</p>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-pepper-hot"></i>
-                                <span>Piquant moyen</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-balance-scale"></i>
-                                <span>Équilibré</span>
-                            </div>
+                <div class="product-info fade-in">
+                    <h3>Notre mélange d'épices signature</h3>
+                    <p>Nokoss combine les meilleures épices locales pour vous offrir une expérience culinaire unique. Plus besoin de multiples ingrédients, notre mélange fait tout le travail pour vous.</p>
+                    
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sans conservateurs</span>
                         </div>
-                        <div class="product-price">1500 FCFA <span>/ 100g</span></div>
-                        <a href="#contact" class="btn btn-primary">Commander</a>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sans colorants artificiels</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sans exhausteurs de goût</span>
+                        </div>
                     </div>
+                    
+                    <h4>Ingrédients 100% naturels :</h4>
+                    <div class="ingredients-list">
+                        <div class="ingredient-item">
+                            <i class="fas fa-pepper-hot"></i>
+                            <span>Poivrons</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Piments verts</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-garlic"></i>
+                            <span>Ail</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-onion"></i>
+                            <span>Oignons</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Coriandre</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-seedling"></i>
+                            <span>Oignons verts</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-mortar-pestle"></i>
+                            <span>Sel</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-circle"></i>
+                            <span>Poivre noir</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-fire-flame-curved"></i>
+                            <span>Poivre de Cayenne</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <i class="fas fa-smoking"></i>
+                            <span>Paprika fumé</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Acheter maintenant</a>
                 </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-img">
-                        <img src="nokoss fort.png" alt="Nokoss Fort" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1604335398546-e576c8c473e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'">
-                        <div class="product-badge">Fort</div>
-                    </div>
-                    <div class="product-content">
-                        <h3>Nokoss Fort</h3>
-                        <p>Pour les amateurs de sensations fortes avec un piquant qui réveille les papilles</p>
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-fire"></i>
-                                <span>Très piquant</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-bolt"></i>
-                                <span>Énergisant</span>
-                            </div>
-                        </div>
-                        <div class="product-price">1500 FCFA <span>/ 100g</span></div>
-                        <a href="#contact" class="btn btn-primary">Commander</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Section ingrédients détaillée avec images -->
-            <div class="ingredients-detailed fade-in">
-                <div class="ingredients-title">
-                    <h3>Nos Ingrédients 100% Naturels</h3>
-                    <p>Chaque ingrédient est soigneusement sélectionné pour sa qualité et sa fraîcheur</p>
-                </div>
-                
-                <!-- Galerie d'images des ingrédients -->
-                <div class="ingredient-img-list">
-                    <div class="ingredient-img-item">
-                        <img src="poivron.jpeg" alt="Poivrons frais" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1071&q=80'">
-                        <div class="ingredient-name">Poivrons</div>
-                    </div>
-                    <div class="ingredient-img-item">
-                        <img src="piment-vert.jpg" alt="Piments verts" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1092&q=80'">
-                        <div class="ingredient-name">Piments verts</div>
-                    </div>
-                    <div class="ingredient-img-item">
-                        <img src="ail.jpeg" alt="Ail frais" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1604335398546-e576c8c473e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'">
-                        <div class="ingredient-name">Ail</div>
-                    </div>
-                    <div class="ingredient-img-item">
-                        <img src="Oignons.jpg" alt="Oignons frais" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1092&q=80'">
-                        <div class="ingredient-name">Oignons</div>
-                    </div>
-                    <div class="ingredient-img-item">
-                        <img src="Coriandre fraîche.png" alt="Coriandre fraîche" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1578496781980-45dd7b1a6e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'">
-                        <div class="ingredient-name">Coriandre</div>
-                    </div>
-                </div>
-                
-                <div class="ingredients-grid">
-                    <div class="ingredient-detailed">
-                        <div class="ingredient-icon">
-                            <img src="poivron.jpeg" alt="Poivron" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1071&q=80'">
-                        </div>
-                        <h4>Poivrons</h4>
-                        <p>Sources de vitamines A et C, apportent douceur et couleur naturelle</p>
-                    </div>
-                    
-                    <div class="ingredient-detailed">
-                        <div class="ingredient-icon">
-                            <img src="piment.jpg" alt="Piment" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1092&q=80'">
-                        </div>
-                        <h4>Piments verts</h4>
-                        <p>Contiennent de la capsaïcine pour un piquant naturel et digestif</p>
-                    </div>
-                    
-                    <div class="ingredient-detailed">
-                        <div class="ingredient-icon">
-                            <img src="ail.jpeg" alt="Ail" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1604335398546-e576c8c473e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'">
-                        </div>
-                        <h4>Ail</h4>
-                        <p>Antioxydant puissant, antiseptique naturel et exhausteur de goût</p>
-                    </div>
-                    
-                    <div class="ingredient-detailed">
-                        <div class="ingredient-icon">
-                            <img src="Oignons.jpg" alt="Oignon" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1092&q=80'">
-                        </div>
-                        <h4>Oignons</h4>
-                        <p>Riches en quercétine, apportent une saveur caramélisée unique</p>
-                    </div>
-                    
-                    <div class="ingredient-detailed">
-                        <div class="ingredient-icon">
-                            <img src="Coriandre fraîche.png" alt="Coriandre" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1578496781980-45dd7b1a6e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'">
-                        </div>
-                        <h4>Coriandre</h4>
-                        <p>Digestive et riche en antioxydants, parfume délicatement le mélange</p>
-                    </div>
-                    
-                    <div class="ingredient-detailed">
-                        <div class="ingredient-icon">
-                            <img src="Oignons verts.webp" alt="Oignon vert" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1092&q=80'">
-                        </div>
-                        <h4>Oignons verts</h4>
-                        <p>Apportent fraîcheur et une note végétale caractéristique</p>
-                    </div>
-                    
-                    <div class="ingredient-detailed">
-                        <div class="ingredient-icon">
-                            <img src="Sel marin.jpg" alt="Sel" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1092&q=80'">
-                        </div>
-                        <h4>Sel marin</h4>
-                        <p>Sel naturel non raffiné, riche en minéraux essentiels</p>
-                    </div>
-                    
-                    <div class="ingredient-detailed">
-                        <div class="ingredient-icon">
-                            <img src="Poivre noir.avif" alt="Poivre noir" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1092&q=80'">
-                        </div>
-                        <h4>Poivre noir</h4>
-                        <p>Stimule la digestion et apporte une pointe d'épice chaude</p>
-                    </div>
-                    
-                    
-                </div>
-            </div>
-            
-            <!-- Information de conservation -->
-            <div class="conservation-info fade-in">
-                <h3><i class="fas fa-info-circle"></i> Conservation & Durée de validité</h3>
-                <p><strong>Durée maximale : 1 mois après ouverture</strong></p>
-                <p>Pour éviter les moisissures et préserver toutes les saveurs, suivez ces conseils :</p>
-                
-                <div class="conservation-tips">
-                    <div class="tip-item">
-                        <i class="fas fa-box-open"></i>
-                        <h4>Après ouverture</h4>
-                        <p>Consommez dans le mois qui suit pour une fraîcheur optimale</p>
-                    </div>
-                    
-                    <div class="tip-item">
-                        <i class="fas fa-temperature-low"></i>
-                        <h4>Température</h4>
-                        <p>Conservez au sec, à l'abri de la lumière et de la chaleur</p>
-                    </div>
-                    
-                    <div class="tip-item">
-                        <i class="fas fa-wind"></i>
-                        <h4>Humidité</h4>
-                        <p>Évitez les endroits humides qui favorisent les moisissures</p>
-                    </div>
-                    
-                    <div class="tip-item">
-                        <i class="fas fa-jar"></i>
-                        <h4>Contenant</h4>
-                        <p>Refermez bien le sachet après chaque utilisation</p>
-                    </div>
-                </div>
-                
-                <p style="margin-top: 20px; font-style: italic; color: var(--accent-orange);">
-                    <i class="fas fa-exclamation-triangle"></i> 
-                    <strong>Important :</strong> Notre produit étant 100% naturel sans conservateurs, 
-                    il est normal qu'une fine couche d'huile naturelle apparaisse à la surface. 
-                    C'est la preuve de sa qualité et de sa fraîcheur !
-                </p>
             </div>
         </div>
     </section>
@@ -1888,7 +1367,7 @@
             <div class="recipes-grid">
                 <div class="recipe-card fade-in">
                     <div class="recipe-img">
-                        <img src="thieboudienne.jpeg" alt="Thiéboudienne" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1081&q=80'">
+                        <img src="thieboudienne.jpeg" alt="Thiéboudienne">
                     </div>
                     <div class="recipe-content">
                         <h3>Thiéboudienne</h3>
@@ -1899,7 +1378,7 @@
                 
                 <div class="recipe-card fade-in">
                     <div class="recipe-img">
-                        <img src="poulet.jpg" alt="Yassa" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80'">
+                        <img src="poulet.jpg" alt="Yassa">
                     </div>
                     <div class="recipe-content">
                         <h3>Yassa Poulet</h3>
@@ -1910,7 +1389,7 @@
                 
                 <div class="recipe-card fade-in">
                     <div class="recipe-img">
-                        <img src="mafe-cuisine-malienne.webp" alt="Mafé" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'">
+                        <img src="mafe-cuisine-malienne.webp" alt="Mafé">
                     </div>
                     <div class="recipe-content">
                         <h3>Mafé</h3>
@@ -1941,66 +1420,24 @@
                 </div>
                 
                 <div class="about-image fade-in">
-                    <img src="histoire.jpeg" alt="Épices fraîches" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'">
+                    <img src="histoire-Nokoss.jpg" alt="Épices fraîches">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Contact MODIFIÉE -->
+    <!-- Section Contact -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>Où acheter Nokoss ?</h2>
-                <p>Prix : 100g - 1500 FCFA | 250g - 2500 FCFA | 500g - 3500 FCFA | 1kg - 5000 FCFA</p>
-            </div>
-            
-            <!-- Ajout d'un tableau récapitulatif des prix dans la section contact -->
-            <div class="conservation-info fade-in" style="margin-bottom: 40px;">
-                <h3><i class="fas fa-tags"></i> Nos tarifs</h3>
-                <div style="overflow-x: auto;">
-                    <table style="width: 100%; background: white; margin-top: 20px;">
-                        <tr>
-                            <th>Conditionnement</th>
-                            <th>Prix</th>
-                            <th>Prix au gramme</th>
-                            <th>Économie</th>
-                        </tr>
-                        <tr>
-                            <td><strong>100g</strong></td>
-                            <td class="price-cell">1500 FCFA</td>
-                            <td>5 FCFA/g</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td><strong>250g</strong></td>
-                            <td class="price-cell">2500 FCFA</td>
-                            <td>4 FCFA/g</td>
-                            <td>100 FCFA</td>
-                        </tr>
-                        <tr>
-                            <td><strong>500g</strong></td>
-                            <td class="price-cell">3500 FCFA</td>
-                            <td>3.6 FCFA/g</td>
-                            <td>200 FCFA</td>
-                        </tr>
-                        <tr>
-                            <td><strong>1kg</strong></td>
-                            <td class="price-cell">5000 FCFA</td>
-                            <td>3 FCFA/g</td>
-                            <td>500 FCFA</td>
-                        </tr>
-                    </table>
-                </div>
-                <p style="margin-top: 15px; text-align: center; font-weight: 600;">
-                    <i class="fas fa-shipping-fast"></i> Livraison gratuite à partir de 5 000 FCFA d'achat !
-                </p>
+                <p>Pour acheter notre produit ou pour toute information, contactez-nous directement</p>
             </div>
             
             <div class="contact-container">
                 <div class="contact-info fade-in">
                     <h3>Contactez-nous pour acheter Nokoss</h3>
-                    <p>Nokoss est disponible en sachets de 100g, 250g, 500g et 1kg. Contactez-nous pour connaître les points de vente près de chez vous ou pour commander directement.</p>
+                    <p>Nokoss est disponible en sachets de 100g et 250g. Contactez-nous pour connaître les points de vente près de chez vous ou pour commander directement.</p>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -2028,7 +1465,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>contact@nokoss.sn</p>
+                            <p>contact@Greencode.sn</p>
                         </div>
                     </div>
                     
@@ -2081,27 +1518,6 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="quantity">Quantité souhaitée</label>
-                            <select id="quantity" class="form-control">
-                                <option value="">Choisir un conditionnement</option>
-                                <option value="100g">100g - 1500 FCFA</option>
-                                <option value="250g">250g - 2500 FCFA</option>
-                                <option value="500g">500g - 3500 FCFA</option>
-                                <option value="1kg">1kg - 5000 FCFA</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="variety">Variété préférée</label>
-                            <select id="variety" class="form-control">
-                                <option value="">Choisir une variété</option>
-                                <option value="doux">Nokoss Doux</option>
-                                <option value="moyen">Nokoss Moyen</option>
-                                <option value="fort">Nokoss Fort</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
                             <label for="message">Message *</label>
                             <textarea id="message" class="form-control" required placeholder="Détaillez votre demande..."></textarea>
                         </div>
@@ -2134,7 +1550,7 @@
                     <div class="footer-logo">
                         <!-- Logo Nokoss dans le footer -->
                         <img src="logo.jpeg" alt="Logo Nokoss" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" viewBox=\"0 0 40 40\"><rect width=\"40\" height=\"40\" fill=\"%23ffffff\"/>
-                        <span>Nokoss</span>
+                        <span>Greencode</span>
                     </div>
                     <p>L'authenticité locale, simplifiée. Un mélange d'épices 100% naturel pour cuisiner traditionnel en un temps record.</p>
                 </div>
@@ -2181,7 +1597,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Nokoss. Tous droits réservés. | Conçu avec passion pour la cuisine africaine</p>
+                <p>&copy;  Groupe-Greencode. Tous droits réservés. | Conçu avec passion pour la cuisine africaine</p>
             </div>
         </div>
     </footer>
@@ -2271,8 +1687,6 @@
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value || 'Non renseigné';
         const subject = document.getElementById('subject').value;
-        const quantity = document.getElementById('quantity').value || 'Non spécifié';
-        const variety = document.getElementById('variety').value || 'Non spécifié';
         const message = document.getElementById('message').value;
         
         // Générer une référence unique
@@ -2300,17 +1714,6 @@
             return labels[subject] || 'Demande d\'information';
         }
         
-        // Fonction pour obtenir le prix selon la quantité
-        function getPriceForQuantity(quantity) {
-            const prices = {
-                '100g': '500 FCFA',
-                '250g': '1 000 FCFA',
-                '500g': '1 800 FCFA',
-                '1kg': '3 000 FCFA'
-            };
-            return prices[quantity] || 'Non spécifié';
-        }
-        
         // Fonction pour obtenir la couleur selon le sujet
         function getSubjectColor(subject) {
             const colors = {
@@ -2323,28 +1726,38 @@
             return colors[subject] || '#6b7280';
         }
         
-        // Préparer les paramètres pour l'email de notification
+        // Préparer les paramètres pour l'email de notification à Greencode
         const templateParams = {
             client_nom: name,
             client_email: email,
             client_telephone: phone,
             type_demande: getSubjectLabel(subject),
-            quantite: quantity,
-            variete: variety,
-            prix: getPriceForQuantity(quantity),
             message_client: message,
             date_reception: dateReception,
             reference: reference,
             heure_reception: now.toLocaleTimeString('fr-FR'),
+            ip_client: 'Collectée par le serveur',
             couleur_sujet: getSubjectColor(subject),
+            
+            // Statistiques (vous pouvez les adapter)
+            nb_demandes_jour: 'Nouvelle',
+            nb_demandes_type: '1',
+            taux_reponse: '100%',
+            temps_moyen: '2h',
+            
+            // Liens (à adapter selon votre configuration)
+            lien_admin: 'https://vercel.com/dashboard',
+            lien_commandes: window.location.origin + '/admin/commandes',
+            lien_clients: window.location.origin + '/admin/clients',
+            lien_stats: window.location.origin + '/admin/statistiques'
         };
         
-        console.log('Envoi de l\'email...', templateParams);
+        console.log('Envoi de l\'email à Greencode...', templateParams);
         
-        // Envoyer l'email
+        // Envoyer l'email à Greencode - UTILISEZ VOTRE SERVICE_ID ET TEMPLATE_ID
         emailjs.send('service_zhgc4xx', 'template_4qv7anu', templateParams)
             .then(response => {
-                console.log('✅ Email envoyé!', response.status, response.text);
+                console.log('✅ Notification envoyée à Greencode!', response.status, response.text);
                 
                 // Afficher le modal de confirmation
                 confirmationModal.style.display = 'flex';
@@ -2362,6 +1775,9 @@
                     submitBtn.style.backgroundColor = '';
                 }, 2000);
                 
+                // Faire défiler jusqu'au modal
+                confirmationModal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
             }, error => {
                 console.log('❌ Erreur lors de l\'envoi:', error);
                 
@@ -2369,7 +1785,7 @@
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Réessayer l\'envoi';
                 
-                // Afficher un message d'erreur
+                // Afficher un message d'erreur plus convivial
                 showNotification(`
                     <div style="background-color: #fee; padding: 15px; border-radius: 8px; margin: 10px 0;">
                         <strong>⚠️ Erreur d'envoi</strong><br>
@@ -2377,7 +1793,7 @@
                         <ul style="text-align: left; padding-left: 20px;">
                             <li>Réessayer dans quelques instants</li>
                             <li>Nous contacter directement sur WhatsApp</li>
-                            <li>Nous envoyer un email à contact@nokoss.sn</li>
+                            <li>Nous envoyer un email à contact@greencode.sn</li>
                         </ul>
                     </div>
                 `, 'error');
@@ -2465,8 +1881,15 @@
         
         // Préparer les paramètres pour la newsletter
         const newsletterParams = {
+            prenom_abonne: email.split('@')[0],
             email_abonne: email,
             date_inscription: new Date().toLocaleDateString('fr-FR'),
+            date_expiration: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('fr-FR'),
+            lien_achat: window.location.origin + '#contact',
+            nom_recette: 'Thiéboudienne simplifiée',
+            description_recette: 'Le plat national sénégalais préparé en un temps record avec Nokoss',
+            lien_recette: window.location.origin + '#recettes',
+            lien_desabonnement: window.location.origin + '/unsubscribe?email=' + encodeURIComponent(email)
         };
         
         // Envoyer l'inscription à la newsletter
@@ -2667,50 +2090,23 @@
         const firstTime = sessionStorage.getItem('nokoss_first_visit');
         if (!firstTime) {
             setTimeout(() => {
-                showNotification('Bienvenue sur Nokoss ! Découvrez l\'authenticité locale simplifiée.', 'info');
+                showNotification('Bienvenue sur Greencode ! Découvrez l\'authenticité locale simplifiée.', 'info');
                 sessionStorage.setItem('nokoss_first_visit', 'true');
             }, 2000);
         }
     });
     
-    // Préchargement des images
-    document.addEventListener('DOMContentLoaded', function() {
-        // Images à précharger
-        const imagesToPreload = [
-            'logo.jpeg',
-            'nokoss.mp4',
-            'prod_pres_apropos.webp',
-            'nokoss-doux.jpg',
-            'nokoss-moyen.jpg',
-            'nokoss-forte.jpg',
-            'poivron-frais.jpg',
-            'piment-vert.jpg',
-            'ail-frais.jpg',
-            'oignon-frais.jpg',
-            'coriandre-fraiche.jpg',
-            'thieboudienne.jpeg',
-            'poulet.jpg',
-            'mafe-cuisine-malienne.webp',
-            'histoire.jpeg'
+    // Gestion des erreurs de chargement d'images
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            const fallbackColors = ['#1a5d1a', '#2e7d32', '#e65100'];
+            const randomColor = fallbackColors[Math.floor(Math.random() * fallbackColors.length)];
             
-        ];
-        
-        // Fonction pour précharger une image
-        function preloadImage(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.src = src;
-                img.onload = resolve;
-                img.onerror = resolve; // Ne pas rejeter en cas d'erreur
-            });
-        }
-        
-        // Précharger toutes les images
-        Promise.allSettled(imagesToPreload.map(img => preloadImage(img)))
-            .then(results => {
-                const loadedCount = results.filter(r => r.status === 'fulfilled').length;
-                console.log(`${loadedCount} images préchargées avec succès`);
-            });
+            this.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                <rect width="100" height="100" fill="${randomColor}" opacity="0.1"/>
+                <text x="50" y="60" font-family="Arial" font-size="14" fill="${randomColor}" text-anchor="middle" font-weight="bold">GREENCODE</text>
+            </svg>`;
+        });
     });
 </script>
 </body>
